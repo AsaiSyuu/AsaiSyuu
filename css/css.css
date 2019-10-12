@@ -1,0 +1,96 @@
+*{
+	margin: 0;
+	padding: 0;
+	/*设置不会因为内边距和 边框撑开宽度和高度*/
+	box-sizing: border-box;
+}
+
+html,body{
+	/*溢出隐藏*/
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background: skyblue;
+}
+.page{
+	width: 375px;
+	height: 100%;
+	/*三个页面都重叠到一起*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: skyblue;
+	transform: translateX(375px);
+	transition: all 1s;
+}
+
+.active{
+	/*!important让这个权限变高覆盖上面的，进行偏移*/
+	transform: translateX(0px) !important;
+}
+
+.startGame{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.startBtn{
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 30px;
+	border: none;
+	background: green;
+	color: #fff;
+	/*阴影不进行偏移 */
+	box-shadow: 0 0 30px green;
+	border-radius: 10px;
+}
+
+.gaming{
+	background: coral;
+	padding: 40px 20px;
+}
+.gaming h1{
+	margin: 20px 0px;
+	font-size: 24px;
+	color: #fff;
+}
+.gaming .options>div{
+	margin: 10px 10px;
+	padding: 5px 10px;
+	color: #fff;
+	border-radius: 7px;
+}
+/*正确显示的颜色*/
+.correct{
+	background: green;
+}
+/*错误显示的颜色*/
+.error{
+	background: red;
+}
+
+
+/*结束页面*/
+.endGame{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.endGame h1{
+	margin: 40px;
+}
+.reStart{
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 30px;
+	border: none;
+	background: green;
+	color: #fff;
+	/*阴影不进行偏移 */
+	box-shadow: 0 0 30px green;
+	border-radius: 10px;
+}
