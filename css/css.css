@@ -13,14 +13,14 @@ html,body{
 	background: skyblue;
 }
 .page{
-	width: 400px;
+	width: 385px;
 	height: 100%;
 	/*三个页面都重叠到一起*/
 	position: absolute;
 	left: 0;
 	top: 0;
 	background: skyblue;
-	transform: translateX(400px);
+	transform: translateX(385px);
 	transition: all 1s;
 }
 
