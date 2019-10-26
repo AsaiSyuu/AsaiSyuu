@@ -13,14 +13,14 @@ html,body{
 	background: skyblue;
 }
 .page{
-	width: 375px;
+	width: 400px;
 	height: 100%;
 	/*三个页面都重叠到一起*/
 	position: absolute;
 	left: 0;
 	top: 0;
 	background: skyblue;
-	transform: translateX(375px);
+	transform: translateX(400px);
 	transition: all 1s;
 }
 
@@ -49,10 +49,10 @@ html,body{
 
 .gaming{
 	background: coral;
-	padding: 40px 20px;
+	padding: 20px 20px;
 }
 .gaming h1{
-	margin: 20px 0px;
+	margin: 0px 0px;
 	font-size: 24px;
 	color: #fff;
 }

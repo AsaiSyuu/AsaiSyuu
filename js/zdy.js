@@ -57,6 +57,7 @@ $(".startBtn").click(function(e){
 
 function randomRender(){
 	//获取题库数组中，随机出的整数(pasetInt)索引值		parseInt方法       返回由字符串转换得到的整数。
+	$(".next").removeClass("active")
 	var randomIndex = parseInt(Math.random()*tikuList.length);
 	//每次拿出一个题目放到一个对象里，并把这个题目从数组中删除
 	//这个题目对象是一个数组，所以写个0获取当前对象
@@ -100,7 +101,6 @@ $(".options").click(function(e){
 		}
 		
 		isChoose = true;
-		
 		//每点击一次,答题的数量减1
 		num --;
 		index_ = index+1;
@@ -124,31 +124,33 @@ $(".options").click(function(e){
 
 $(".next").click(function(){
 	//答题数量结束了,切换到结束页面,否则切换到下一题
-	if(num==0){
-		$(".endGame").addClass("active")
-		//获取得分标签,把上面累计的得分设置显示到页面上
-		$(".score").html(score);
-		// var today = new Date();
-		// var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-		// var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-		// var dateTime = date+' '+time;
-		console.log(result);
-		//localStorage.setItem(dateTime, result);
-		doLog(result.toString());
-		// var dictstring = JSON.stringify(dateTime + result);
-		// var fs = require('fs'); 
-		// fs.writeFile("thing.json", dictstring);  
-		// var data = new Blob([result],{type:"text/plain;charset=UTF-8"});
-		// var downloadUrl = window.URL.createObjectURL(data);
-		// var anchor = document.createElement("a");
-		// anchor.href = downloadUrl;
-		// anchor.download = "result.txt";
-		// anchor.click();
-		// window.URL.revokeObjectURL(data);
+	if(isChoose) {
+		if(num==0){
+			$(".endGame").addClass("active")
+			//获取得分标签,把上面累计的得分设置显示到页面上
+			$(".score").html(score);
+			// var today = new Date();
+			// var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+			// var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+			// var dateTime = date+' '+time;
+			console.log(result);
+			//localStorage.setItem(dateTime, result);
+			doLog(result.toString());
+			// var dictstring = JSON.stringify(dateTime + result);
+			// var fs = require('fs'); 
+			// fs.writeFile("thing.json", dictstring);  
+			// var data = new Blob([result],{type:"text/plain;charset=UTF-8"});
+			// var downloadUrl = window.URL.createObjectURL(data);
+			// var anchor = document.createElement("a");
+			// anchor.href = downloadUrl;
+			// anchor.download = "result.txt";
+			// anchor.click();
+			// window.URL.revokeObjectURL(data);
 
-	}else{
-		isChoose = false;
-		randomRender()
+		}else{
+			isChoose = false;
+			randomRender()
+		}
 	}
 })
 //点击重新答题按钮后,重新刷新页面进行重新答题
