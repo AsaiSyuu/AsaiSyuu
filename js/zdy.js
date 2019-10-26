@@ -134,7 +134,7 @@ $(".next").click(function(){
 		// var dateTime = date+' '+time;
 		console.log(result);
 		//localStorage.setItem(dateTime, result);
-		doLog(result);
+		doLog(result.toString());
 		// var dictstring = JSON.stringify(dateTime + result);
 		// var fs = require('fs'); 
 		// fs.writeFile("thing.json", dictstring);  
