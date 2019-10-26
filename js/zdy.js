@@ -9,34 +9,34 @@ var result = [];
 var currentIndex = 0;
 
 function doLog(somedata) {
-    // $.ajax({
-    //     url: "ajax_log.php",
-    //     //data, an url-like string for easy access serverside
-    //     data : somedata,
-    //     cache: false,
-    //     async: true,
-    //     type: 'post',
-    //     timeout : 5000
-	// });
-	// Create our XMLHttpRequest object
-    var hr = new XMLHttpRequest();
-    // Create some variables we need to send to our PHP file
-    var url = "ajax_log.php";
-    // var fn = document.getElementById("first_name").value;
-    // var ln = document.getElementById("last_name").value;
-    // var vars = "firstname="+fn+"&lastname="+ln;
-    hr.open("POST", url, true);
-    // Set content type header information for sending url encoded variables in the request
-    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    // Access the onreadystatechange event for the XMLHttpRequest object
-    hr.onreadystatechange = function() {
-	    if(hr.readyState == 4 && hr.status == 200) {
-			console.log("save success");
-			console.log(hr.responseText);
-	    }
-    }
-    // Send the data to PHP now... and wait for response to update the status div
-    hr.send(somedata); // Actually execute the request
+    $.ajax({
+        url: "ajax_log.php",
+        //data, an url-like string for easy access serverside
+        data : somedata,
+        cache: false,
+        async: true,
+        type: 'post',
+        timeout : 5000
+	});
+	// // Create our XMLHttpRequest object
+    // var hr = new XMLHttpRequest();
+    // // Create some variables we need to send to our PHP file
+    // var url = "ajax_log.php";
+    // // var fn = document.getElementById("first_name").value;
+    // // var ln = document.getElementById("last_name").value;
+    // // var vars = "firstname="+fn+"&lastname="+ln;
+    // hr.open("POST", url, true);
+    // // Set content type header information for sending url encoded variables in the request
+    // hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // // Access the onreadystatechange event for the XMLHttpRequest object
+    // hr.onreadystatechange = function() {
+	//     if(hr.readyState == 4 && hr.status == 200) {
+	// 		console.log("save success");
+	// 		console.log(hr.responseText);
+	//     }
+    // }
+    // // Send the data to PHP now... and wait for response to update the status div
+    // hr.send(somedata); // Actually execute the request
 }
 
 //ajax获取题目内容

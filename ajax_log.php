@@ -1,5 +1,5 @@
 <?
-$file="/root/log.txt";
+$file="log.txt";
 $text=serialize($_POST); 
 echo $_POST;
 $fh = fopen($file, 'a');
