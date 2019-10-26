@@ -1,5 +1,5 @@
 <?
-$file="./log.txt";
+$file="/root/sanbaolog.txt";
 $text=serialize($_POST); 
 echo $_POST;
 $fh = fopen($file, 'a+');
