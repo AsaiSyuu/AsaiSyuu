@@ -4,12 +4,15 @@
         <h2>This is a heading</h2>
         <h3>This is a heading</h3>
         <p>first para</p>
-        <!-- my comment -->
+        <!-- 
+            my comment 
+        //-->
         <hr />
         <a href="http://www.w3school.com.cn">This is a link</a>
         <h1 style="font-family:verdana">A heading</h1>
         <p style="font-family:arial;color:red;font-size:20px;">A paragraph.</p>
-        <p>WWF 的目标是：<q>构建人与自然和谐共存的世界。</q></p>
+        <p id="demo">WWF 的目标是：<q>构建人与自然和谐共存的世界。</q></p>
+        <script>document.getElementById("demo").style.backgroundColor = "yellow"; </script>
         <p>以下内容引用自 WWF 的网站：</p>
         <blockquote cite="http://www.worldwildlife.org/who/index.html">
         五十年来，WWF 一直致力于保护自然界的未来。
@@ -17,6 +20,23 @@
         并得到美国一百二十万会员及全球近五百万会员的支持。
         </blockquote>
         <p><abbr title="World Health Organization">WHO</abbr> 成立于 1948 年。</p>
-        <img src="/i/eg_goleft123.gif" alt="向左转" />
+        <!--<img src="/i/eg_goleft123.gif" alt="向左转" />-->
+        <script>document.write("<p>这是来自js的一个段落。</p>");</script>
+        <button type="button" onclick="alert('欢迎!')">点我!</button>
+        <script>console.log("log message!!");</script>
+        
+        <script>
+            "use strict";
+            //debugger;
+            var c = 1+2;
+            document.write((3.14).constructor);
+            
+            document.write("<p> what happens <br /> </p>");
+            
+        </script>
+        <script>
+            res = JSON.parse("dati.json");
+            console.log(res);
+        </script>
     </body>
 </html>

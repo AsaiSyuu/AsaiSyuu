@@ -56,11 +56,29 @@ html,body{
 	font-size: 24px;
 	color: #fff;
 }
-.gaming .options>div{
+.gaming .options div{
 	margin: 10px 10px;
 	padding: 5px 10px;
 	color: #fff;
 	border-radius: 7px;
+}
+.gaming .comment p{
+	margin: 10px 10px;
+	padding: 5px 10px;
+	color: #fff;
+	border-radius: 7px;
+}
+.gaming .next button{
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 30px;
+	border: none;
+	background: green;
+	color: #fff;
+	/*阴影不进行偏移 */
+	box-shadow: 0 0 30px green;
+	border-radius: 10px;
 }
 /*正确显示的颜色*/
 .correct{
