@@ -9,15 +9,34 @@ var result = [];
 var currentIndex = 0;
 
 function doLog(somedata) {
-    $.ajax({
-        url: "ajax_log.php",
-        //data, an url-like string for easy access serverside
-        data : somedata,
-        cache: false,
-        async: true,
-        type: 'post',
-        timeout : 5000
-    });
+    // $.ajax({
+    //     url: "ajax_log.php",
+    //     //data, an url-like string for easy access serverside
+    //     data : somedata,
+    //     cache: false,
+    //     async: true,
+    //     type: 'post',
+    //     timeout : 5000
+	// });
+	// Create our XMLHttpRequest object
+    var hr = new XMLHttpRequest();
+    // Create some variables we need to send to our PHP file
+    var url = "out.php";
+    // var fn = document.getElementById("first_name").value;
+    // var ln = document.getElementById("last_name").value;
+    // var vars = "firstname="+fn+"&lastname="+ln;
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+	    if(hr.readyState == 4 && hr.status == 200) {
+		    var return_data = hr.responseText;
+			console.log("save success");
+	    }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(somedata); // Actually execute the request
 }
 
 //ajax获取题目内容
@@ -109,10 +128,10 @@ $(".next").click(function(){
 		$(".endGame").addClass("active")
 		//获取得分标签,把上面累计的得分设置显示到页面上
 		$(".score").html(score);
-		var today = new Date();
-		var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-		var dateTime = date+' '+time;
+		// var today = new Date();
+		// var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+		// var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		// var dateTime = date+' '+time;
 		console.log(result);
 		//localStorage.setItem(dateTime, result);
 		doLog(result);
