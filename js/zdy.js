@@ -87,7 +87,6 @@ $(".options").click(function(e){
 		index_ = index+1;
 		result.push(currentIndex);
 		result.push(index_);
-		doLog(result);
 		//console.log(result);
 		//延迟一秒进行切换
 		// setTimeout(function(){
@@ -116,10 +115,10 @@ $(".next").click(function(){
 		var dateTime = date+' '+time;
 		console.log(result);
 		//localStorage.setItem(dateTime, result);
-
-		var dictstring = JSON.stringify(dateTime + result);
-		var fs = require('fs'); 
-		fs.writeFile("thing.json", dictstring);  
+		doLog(result);
+		// var dictstring = JSON.stringify(dateTime + result);
+		// var fs = require('fs'); 
+		// fs.writeFile("thing.json", dictstring);  
 		// var data = new Blob([result],{type:"text/plain;charset=UTF-8"});
 		// var downloadUrl = window.URL.createObjectURL(data);
 		// var anchor = document.createElement("a");
