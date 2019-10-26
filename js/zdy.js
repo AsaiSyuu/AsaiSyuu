@@ -31,8 +31,8 @@ function doLog(somedata) {
     // Access the onreadystatechange event for the XMLHttpRequest object
     hr.onreadystatechange = function() {
 	    if(hr.readyState == 4 && hr.status == 200) {
-		    var return_data = hr.responseText;
 			console.log("save success");
+			console.log(hr.responseText);
 	    }
     }
     // Send the data to PHP now... and wait for response to update the status div
